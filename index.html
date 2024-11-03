@@ -31,6 +31,7 @@
             object-fit: cover; /* 確保圖片不變形 */
             display: block; /* 使圖片在新行顯示 */
             margin: 10px auto; /* 自動水平居中 */
+            transition: transform 0.3s; /* 添加過渡效果 */
         }
 
         .dog-info {
@@ -44,13 +45,6 @@
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        .samoa-container img {
-            width: 200px; /* 圖片寬度 */
-            height: 150px; /* 統一圖片高度 */
-            object-fit: cover; /* 確保圖片不變形 */
-            display: block; /* 使圖片在新行顯示 */
-            margin: 10px auto; /* 自動水平居中 */
-        }
 
         .husky-container {
             margin-bottom: 20px;
@@ -58,13 +52,6 @@
             padding: 15px;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-         .husky-container img {
-            width: 200px; /* 圖片寬度 */
-            height: 150px; /* 統一圖片高度 */
-            object-fit: cover; /* 確保圖片不變形 */
-            display: block; /* 使圖片在新行顯示 */
-            margin: 10px auto; /* 自動水平居中 */
         }
 
         #quizButton {
@@ -79,8 +66,19 @@
             font-size: 18px;
             margin-top: 20px;
             text-decoration: none;
+            transition: transform 0.3s; /* 添加過渡效果 */
+        }
+
+        #quizButton:hover {
+            transform: scale(1.1); /* 按鈕放大效果 */
+        }
+
+        img:hover {
+            transform: scale(1.1); /* 圖片放大效果 */
         }
     </style>
+    <!-- 引入 jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
     <h1>小狗介紹</h1>
@@ -125,5 +123,28 @@
     </div>
 
     <a id="quizButton" href="quiz.html">前往小狗問答</a> <!-- 添加按鈕 -->
+
+    <script>
+        // jQuery 用於圖片放大效果
+        $(document).ready(function() {
+            $('img').hover(
+                function() {
+                    $(this).css('transform', 'scale(1.1)'); // 放大
+                }, 
+                function() {
+                    $(this).css('transform', 'scale(1)'); // 恢復原狀
+                }
+            );
+
+            $('#quizButton').hover(
+                function() {
+                    $(this).css('transform', 'scale(1.1)'); // 按鈕放大
+                }, 
+                function() {
+                    $(this).css('transform', 'scale(1)'); // 恢復原狀
+                }
+            );
+        });
+    </script>
 </body>
 </html>
