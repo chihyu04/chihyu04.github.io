@@ -3,61 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>小狗介紹</title>
+    <title>犬種介紹</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .dog-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            background-color: #FFC78E; /* 黃金獵犬背景色 */
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .dog-container img {
+            width: 200px; /* 圖片寬度 */
+            height: auto; /* 高度自動調整 */
+            margin-left: 20px; /* 左側間距 */
+        }
+
+        .dog-info {
+            flex: 1; /* 文字區域佔滿剩餘空間 */
+        }
+
+        .samoa-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            background-color: #C4E1FF; /* 薩摩耶背景色 */
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .husky-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            background-color: #E0E0E0; /* 哈士奇背景色 */
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>小狗介紹</h1>
-        <nav>
-            <ul>
-                <li><a href="#golden-retriever">黃金獵犬</a></li>
-                <li><a href="#samoyed">薩摩耶</a></li>
-                <li><a href="#husky">哈士奇</a></li>
-                <li><a href="quiz.html">小狗問答</a></li>
-</nav>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <section id="golden-retriever">
+    <h1>犬種介紹</h1>
+    
+    <div class="dog-container">
+        <div class="dog-info">
             <h2>黃金獵犬</h2>
-            <img src="golden_retriever.jpg" alt="黃金獵犬" width="200" />
-            <p><strong>品種：</strong>黃金獵犬</p>
-            <p><strong>地區：</strong>蘇格蘭</p>
-            <p><strong>性格：</strong>友好、聰明、忠誠，對小孩和家庭非常友善。</p>
-            <p><strong>體型：</strong>中等到大型，成年犬重約25-34公斤。</p>
-            <p><strong>愛吃的食物：</strong>狗糧、肉類、蔬菜等，需注意飲食均衡。</p>
-            <p><strong>年紀：</strong>平均壽命約10-12年。</p>
-        </section>
+            <p><strong>品種：</strong>黃金獵犬是一種優雅而聰明的犬種。</p>
+            <p><strong>地區：</strong>起源於蘇格蘭。</p>
+            <p><strong>性格：</strong>友善、聰明、樂於助人。</p>
+            <p><strong>體型：</strong>中大型犬，體重約 25-34 公斤。</p>
+            <p><strong>愛吃的食物：</strong>狗糧、肉類和蔬菜。</p>
+            <p><strong>年紀：</strong>平均壽命約 10-12 年。</p>
+        </div>
+        <img src="golden_retriever.jpg" alt="黃金獵犬">
+    </div>
 
-        <section id="samoyed">
+    <div class="samoa-container">
+        <div class="dog-info">
             <h2>薩摩耶</h2>
-            <img src="samoyed.jpg" alt="薩摩耶" width="200" />
-            <p><strong>品種：</strong>薩摩耶</p>
-            <p><strong>地區：</strong>西伯利亞</p>
-            <p><strong>性格：</strong>友善、活潑、樂觀，喜愛與人互動，對家庭非常忠誠。</p>
-            <p><strong>體型：</strong>中型，成年犬重約20-30公斤。</p>
-            <p><strong>愛吃的食物：</strong>高品質的狗糧、肉類、魚類，應避免給予巧克力等有害食物。</p>
-            <p><strong>年紀：</strong>平均壽命約12-14年。</p>
-        </section>
+            <p><strong>品種：</strong>薩摩耶以其白色毛皮和笑容而聞名。</p>
+            <p><strong>地區：</strong>起源於西伯利亞。</p>
+            <p><strong>性格：</strong>友善、活潑、愛撒嬌。</p>
+            <p><strong>體型：</strong>中型犬，體重約 16-30 公斤。</p>
+            <p><strong>愛吃的食物：</strong>肉類、狗糧。</p>
+            <p><strong>年紀：</strong>平均壽命約 12-14 年。</p>
+        </div>
+        <img src="samoyed.jpg" alt="薩摩耶">
+    </div>
 
-        <section id="husky">
+    <div class="husky-container">
+        <div class="dog-info">
             <h2>哈士奇</h2>
-            <img src="husky.jpg" alt="哈士奇" width="200" />
-            <p><strong>品種：</strong>哈士奇</p>
-            <p><strong>地區：</strong>西伯利亞</p>
-            <p><strong>性格：</strong>活潑、獨立、聰明，常需要大量運動，適合活躍的家庭。</p>
-            <p><strong>體型：</strong>中型，成年犬重約20-30公斤。</p>
-            <p><strong>愛吃的食物：</strong>高蛋白的狗糧、肉類、魚類，需注意飲食控制以防肥胖。</p>
-            <p><strong>年紀：</strong>平均壽命約12-15年。</p>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 沒了小狗怎麼活！！！！</p>
-    </footer>
+            <p><strong>品種：</strong>哈士奇是著名的工作犬，尤其擅長拉雪橇。</p>
+            <p><strong>地區：</strong>起源於西伯利亞。</p>
+            <p><strong>性格：</strong>活潑、好動、獨立。</p>
+            <p><strong>體型：</strong>中型犬，體重約 20-27 公斤。</p>
+            <p><strong>愛吃的食物：</strong>高品質狗糧、肉類。</p>
+            <p><strong>年紀：</strong>平均壽命約 12-15 年。</p>
+        </div>
+        <img src="husky.jpg" alt="哈士奇">
+    </div>
 </body>
-
 </html>
