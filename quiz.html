@@ -45,6 +45,7 @@
             border-radius: 5px;
             cursor: pointer;
             font-size: 16px;
+            transition: transform 0.3s; /* 添加過渡效果 */
         }
 
         #result {
@@ -53,6 +54,8 @@
             color: white; /* 結果顏色改為白色 */
         }
     </style>
+    <!-- 引入 jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
     <h1>小狗問答</h1>
@@ -113,25 +116,34 @@
     <div id="result"></div>
 
     <script>
-        document.getElementById('submit').onclick = function() {
-            let score = 0;
-            const answers = {
-                q1: 'B', // 黃金獵犬的原產地
-                q2: 'C', // 薩摩耶的平均壽命
-                q3: 'B', // 哈士奇的性格
-                q4: 'C', // 黃金獵犬的平均體重
-                q5: 'B'  // 薩摩耶喜歡的食物
-            };
+        // jQuery 用於按鈕點擊效果
+        $(document).ready(function() {
+            $('#submit').click(function() {
+                // 點擊按鈕時放大
+                $(this).css('transform', 'scale(1.1)');
+                setTimeout(() => {
+                    $(this).css('transform', 'scale(1)'); // 0.3 秒後恢復原狀
+                }, 300);
 
-            for (let q in answers) {
-                const selectedOption = document.querySelector(`input[name="${q}"]:checked`);
-                if (selectedOption && selectedOption.value === answers[q]) {
-                    score++;
+                let score = 0;
+                const answers = {
+                    q1: 'B', // 黃金獵犬的原產地
+                    q2: 'C', // 薩摩耶的平均壽命
+                    q3: 'B', // 哈士奇的性格
+                    q4: 'C', // 黃金獵犬的平均體重
+                    q5: 'B'  // 薩摩耶喜歡的食物
+                };
+
+                for (let q in answers) {
+                    const selectedOption = $(`input[name="${q}"]:checked`);
+                    if (selectedOption.length && selectedOption.val() === answers[q]) {
+                        score++;
+                    }
                 }
-            }
 
-            document.getElementById('result').innerHTML = `你答對了 ${score} 題！`;
-        };
+                $('#result').html(`你答對了 ${score} 題！`);
+            });
+        });
     </script>
 </body>
 </html>
