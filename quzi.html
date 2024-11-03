@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小狗問答</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .question {
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .options {
+            margin: 10px 0;
+        }
+
+        .options label {
+            display: block;
+        }
+
+        #submit {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #35424a;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        #result {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>小狗問答</h1>
+    <form id="quizForm">
+        <div class="question">
+            <h2>1. 黃金獵犬的原產地是？</h2>
+            <div class="options">
+                <label><input type="radio" name="q1" value="A"> 美國</label>
+                <label><input type="radio" name="q1" value="B"> 蘇格蘭</label>
+                <label><input type="radio" name="q1" value="C"> 加拿大</label>
+                <label><input type="radio" name="q1" value="D"> 英國</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <h2>2. 薩摩耶的平均壽命大約是多少年？</h2>
+            <div class="options">
+                <label><input type="radio" name="q2" value="A"> 8-10年</label>
+                <label><input type="radio" name="q2" value="B"> 10-12年</label>
+                <label><input type="radio" name="q2" value="C"> 12-14年</label>
+                <label><input type="radio" name="q2" value="D"> 15-18年</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <h2>3. 哈士奇的性格通常是？</h2>
+            <div class="options">
+                <label><input type="radio" name="q3" value="A"> 懶惰</label>
+                <label><input type="radio" name="q3" value="B"> 活潑</label>
+                <label><input type="radio" name="q3" value="C"> 嚴肅</label>
+                <label><input type="radio" name="q3" value="D"> 容易受驚</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <h2>4. 黃金獵犬的平均體重是多少？</h2>
+            <div class="options">
+                <label><input type="radio" name="q4" value="A"> 15-20公斤</label>
+                <label><input type="radio" name="q4" value="B"> 20-25公斤</label>
+                <label><input type="radio" name="q4" value="C"> 25-34公斤</label>
+                <label><input type="radio" name="q4" value="D"> 35-40公斤</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <h2>5. 薩摩耶喜歡的食物通常是？</h2>
+            <div class="options">
+                <label><input type="radio" name="q5" value="A"> 巧克力</label>
+                <label><input type="radio" name="q5" value="B"> 高品質狗糧</label>
+                <label><input type="radio" name="q5" value="C"> 薯條</label>
+                <label><input type="radio" name="q5" value="D"> 魚乾</label>
+            </div>
+        </div>
+
+        <button type="button" id="submit">提交答案</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+        document.getElementById('submit').onclick = function() {
+            let score = 0;
+            const answers = {
+                q1: 'B', // 黃金獵犬的原產地
+                q2: 'C', // 薩摩耶的平均壽命
+                q3: 'B', // 哈士奇的性格
+                q4: 'C', // 黃金獵犬的平均體重
+                q5: 'B'  // 薩摩耶喜歡的食物
+            };
+
+            for (let q in answers) {
+                const selectedOption = document.querySelector(`input[name="${q}"]:checked`);
+                if (selectedOption && selectedOption.value === answers[q]) {
+                    score++;
+                }
+            }
+
+            document.getElementById('result').innerHTML = `你答對了 ${score} 題！`;
+        };
+    </script>
+</body>
+</html>
