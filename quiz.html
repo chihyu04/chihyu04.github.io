@@ -8,13 +8,15 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-color: #7B7B7B; /* 修改背景顏色 */
             margin: 0;
             padding: 20px;
+            color: #fff; /* 文字顏色 */
         }
 
         h1 {
             text-align: center;
+            color: white; /* 標題顏色改為白色 */
         }
 
         .question {
@@ -48,6 +50,7 @@
         #result {
             text-align: center;
             margin-top: 20px;
+            color: white; /* 結果顏色改為白色 */
         }
     </style>
 </head>
@@ -90,45 +93,4 @@
                 <label><input type="radio" name="q4" value="A"> 15-20公斤</label>
                 <label><input type="radio" name="q4" value="B"> 20-25公斤</label>
                 <label><input type="radio" name="q4" value="C"> 25-34公斤</label>
-                <label><input type="radio" name="q4" value="D"> 35-40公斤</label>
-            </div>
-        </div>
-
-        <div class="question">
-            <h2>5. 薩摩耶喜歡的食物通常是？</h2>
-            <div class="options">
-                <label><input type="radio" name="q5" value="A"> 巧克力</label>
-                <label><input type="radio" name="q5" value="B"> 高品質狗糧</label>
-                <label><input type="radio" name="q5" value="C"> 薯條</label>
-                <label><input type="radio" name="q5" value="D"> 魚乾</label>
-            </div>
-        </div>
-
-        <button type="button" id="submit">提交答案</button>
-    </form>
-
-    <div id="result"></div>
-
-    <script>
-        document.getElementById('submit').onclick = function() {
-            let score = 0;
-            const answers = {
-                q1: 'B', // 黃金獵犬的原產地
-                q2: 'C', // 薩摩耶的平均壽命
-                q3: 'B', // 哈士奇的性格
-                q4: 'C', // 黃金獵犬的平均體重
-                q5: 'B'  // 薩摩耶喜歡的食物
-            };
-
-            for (let q in answers) {
-                const selectedOption = document.querySelector(`input[name="${q}"]:checked`);
-                if (selectedOption && selectedOption.value === answers[q]) {
-                    score++;
-                }
-            }
-
-            document.getElementById('result').innerHTML = `你答對了 ${score} 題！`;
-        };
-    </script>
-</body>
-</html>
+                <lab
