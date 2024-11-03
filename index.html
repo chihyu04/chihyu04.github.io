@@ -18,8 +18,6 @@
         }
 
         .dog-container {
-            display: flex;
-            align-items: center;
             margin-bottom: 20px;
             background-color: #FFC78E; /* 黃金獵犬背景色 */
             padding: 15px;
@@ -29,17 +27,17 @@
 
         .dog-container img {
             width: 200px; /* 圖片寬度 */
-            height: 150px; /* 高度自動調整 */
-            margin-left: 20px; /* 左側間距 */
+            height: 150px; /* 統一圖片高度 */
+            object-fit: cover; /* 確保圖片不變形 */
+            display: block; /* 使圖片在新行顯示 */
+            margin: 10px auto; /* 自動水平居中 */
         }
 
         .dog-info {
-            flex: 1; /* 文字區域佔滿剩餘空間 */
+            text-align: center; /* 文字居中 */
         }
 
         .samoa-container {
-            display: flex;
-            align-items: center;
             margin-bottom: 20px;
             background-color: #C4E1FF; /* 薩摩耶背景色 */
             padding: 15px;
@@ -48,8 +46,6 @@
         }
 
         .husky-container {
-            display: flex;
-            align-items: center;
             margin-bottom: 20px;
             background-color: #E0E0E0; /* 哈士奇背景色 */
             padding: 15px;
@@ -115,6 +111,5 @@
     </div>
 
     <a id="quizButton" href="quiz.html">前往小狗問答</a> <!-- 添加按鈕 -->
-   
 </body>
 </html>
