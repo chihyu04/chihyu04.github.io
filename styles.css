@@ -37,11 +37,25 @@ main {
 }
 
 section {
-    background: #ffffff;
     margin: 20px 0;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 黃金獵犬的樣式 */
+#golden-retriever {
+    background-color: #FFC78E; /* 黃金獵犬顏色 */
+}
+
+/* 薩摩耶的樣式 */
+#samoyed {
+    background-color: #C4E1FF; /* 薩摩耶顏色 */
+}
+
+/* 哈士奇的樣式 */
+#husky {
+    background-color: #E0E0E0; /* 哈士奇顏色 */
 }
 
 img {
